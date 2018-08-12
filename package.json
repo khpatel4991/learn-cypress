@@ -1,0 +1,23 @@
+{
+  "name": "linear-algebra",
+  "version": "1.0.0",
+  "main": "lib/server/index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "cross-env PORT=8081 NODE_ENV=development node lib/server/index.js",
+    "test": "cypress open"
+  },
+  "dependencies": {
+    "cross-env": "^5.2.0",
+    "dotenv": "^6.0.0",
+    "fastify": "^1.9.0",
+    "fastify-mongodb": "^0.8.2",
+    "fastify-static": "^0.12.0",
+    "winston": "^3.0.0"
+  },
+  "devDependencies": {
+    "cypress": "^3.0.3",
+    "eslint": "^4.19.1",
+    "eslint-plugin-cypress": "^2.0.1"
+  }
+}
