@@ -15,17 +15,13 @@ describe("Handle Auth on Textarea focus", () => {
       .focus();
   });
 
-  it("creates quill container after focus", () => {
-    cy.window()
-      .then(win => {
-        console.info(win);
-      })
-      .should("have.property", "socketCluster");
+  it("should have socketCluster in window", () => {
+    cy.window().should("have.property", "socketCluster")
   });
 
   it("sends token auth request on focus", () => {
     cy.request("POST", "http://localhost:8081/auth", {
-      clientId: "5b5a015b0d1e1b5f34c1200a",
+      clientId: "5b5a015b0d1e1b5f34c1200a"
     }).then(response => {
       expect(response.status).to.eq(201);
       expect(response.body).to.have.property("token");
@@ -37,7 +33,7 @@ describe("Handle Auth on Textarea focus", () => {
       method: "POST",
       url: "http://localhost:8081/auth",
       failOnStatusCode: false,
-      body: { clientId: "5b5b9895dc67be725e242b33" },
+      body: { clientId: "5b5b9895dc67be725e242b33" }
     }).then(response => {
       expect(response.status).to.eq(401);
     });
@@ -48,7 +44,7 @@ describe("Handle Auth on Textarea focus", () => {
       method: "POST",
       url: "http://localhost:8081/auth",
       failOnStatusCode: false,
-      body: {},
+      body: {}
     }).then(response => {
       expect(response.status).to.eq(401);
     });
@@ -58,7 +54,7 @@ describe("Handle Auth on Textarea focus", () => {
     cy.request({
       method: "POST",
       url: "http://localhost:8081/auth",
-      failOnStatusCode: false,
+      failOnStatusCode: false
     }).then(response => {
       expect(response.status).to.eq(400);
     });
