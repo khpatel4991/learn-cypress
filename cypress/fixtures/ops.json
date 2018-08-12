@@ -1,0 +1,8 @@
+{
+  "id": "someUniqueid",
+  "text": "This is an test.",
+  "ops": [
+    { "retain": 8 },
+    { "retain": 2, "attributes": { "key": "key1", "corrections": ["a"] } }
+  ]
+}

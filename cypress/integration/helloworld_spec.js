@@ -20,7 +20,7 @@ describe("Handle Auth on Textarea focus", () => {
       .then(win => {
         console.info(win);
       })
-      .should("have.property", "pt");
+      .should("have.property", "socketCluster");
   });
 
   it("sends token auth request on focus", () => {
