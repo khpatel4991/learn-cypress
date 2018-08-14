@@ -30,7 +30,7 @@ describe("Setup", () => {
       return cy.request(requestOptions);
     });
 
-    it("get auth token on first focus", () => {
+    it("get auth token on first focus set textarea data", () => {
       cy.editorLogin("5b5a015b0d1e1b5f34c1200a").then(response => {
         expect(response.status).to.eq(201);
         expect(response.body).to.have.property("authToken");
